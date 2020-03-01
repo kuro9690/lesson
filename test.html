@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery.js"></script>
+<title> 宮島組 </title>
+<link rel="stylesheet" type="text/css" href="css/test.css">
+
+<script>
+$(function(){
+
+  function move(){
+    $('#obj').animate({
+      top:'200px',
+      left:'200px'
+    }, 1000, 'swing' ,function(){
+      $(this).css('background-color', 'red').animate({
+        top:'0',
+        left:'400px'
+      }, 1000, 'swing' ,function(){
+        $(this).css('background-color', 'green').animate({
+          left:'0'
+        }, 1000, 'swing' ,function(){
+          $(this).css('background-color', 'blue');
+        });
+      });
+    });
+  }
+  move();
+
+});
+</script>
+
+<body>
+<div id="obj"></div>
+</body>
